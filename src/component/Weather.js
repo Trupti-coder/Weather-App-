@@ -31,9 +31,19 @@ function Weather(){
     fetchWeatherDataByCity(city,unit);
   },[city,unit]);
 
-  function getUserLocation(){
-    
-  }
+  const getUserLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          fetchWeatherData(latitude, longitude, unit);
+        },
+        () => setError('Geolocation is not supported by this browser.')
+      );
+    } else {
+      setError('Geolocation is not supported by this browser.');
+    }
+  };
 
 
 
