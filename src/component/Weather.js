@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Weather(){
 
@@ -26,6 +26,10 @@ function Weather(){
     setWeatherData(data);
 
   }
+
+  useEffect(()=>{
+    fetchWeatherDataByCity(city,unit);
+  },[city,unit]);
 
 
 
