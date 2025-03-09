@@ -31,6 +31,10 @@ function Weather(){
     fetchWeatherDataByCity(city,unit);
   },[city,unit]);
 
+  function getUserLocation(){
+    
+  }
+
 
 
 
