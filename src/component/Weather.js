@@ -12,8 +12,9 @@ function Weather(){
             <input type="text"
             value={city}
             placeholder="Enter City"
+            onChange={(event)=>setCity(event.target.value)}
             />
-            <select>
+            <select onChange={(event)=>setUnit(event.target.value)} value={unit}>
                 <option value="metric">Celsius</option>
                 <option value="imperial">Fahrenheit</option>
             </select>
