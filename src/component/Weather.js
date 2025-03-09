@@ -6,6 +6,21 @@ function Weather(){
     const[city,setCity]=useState('Pune');
     const[unit,setUnit]=useState('metric');
 
+
+  const weatherIcons = {
+    "clear sky": "🌞",
+    "few clouds": "🌤",
+    "scattered clouds": "🌥",
+    "broken clouds": "☁️",
+    "shower rain": "🌦",
+    "rain": "🌧",
+    "thunderstorm": "⛈",
+    "snow": "🌨",
+    "mist": "🌫"
+  };
+
+    
+
     return(
         <>
         <div>
