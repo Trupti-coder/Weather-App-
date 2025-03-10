@@ -65,6 +65,16 @@ function Weather(){
 
             <button onClick={()=>fetchWeatherDataByCity(city,unit)}>Get Weather</button>
             <button onClick={getUserLocation}>Get Weather by Location</button>
+
+            {
+              weatherData && (
+                <div>
+                  <h3>{weatherData.name}</h3>
+                  <p>{Math.round(weatherData.main.temp)}°{unit === 'metric' ? 'C' : 'F'}</p>
+                </div>
+                
+              )
+            }
         </div>
         </>
     );
