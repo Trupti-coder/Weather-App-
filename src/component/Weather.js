@@ -62,6 +62,9 @@ function Weather(){
                 <option value="metric">Celsius</option>
                 <option value="imperial">Fahrenheit</option>
             </select>
+
+            <button onClick={()=>fetchWeatherDataByCity(city,unit)}>Get Weather</button>
+            <button onClick={getUserLocation}>Get Weather by Location</button>
         </div>
         </>
     );
