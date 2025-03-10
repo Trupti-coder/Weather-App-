@@ -23,7 +23,7 @@ function Weather(){
 
 
    async function fetchWeatherDataByCity(city,unit){
-    let response=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${d347edc9e69ce0d1a5fc4ff5f78413db}`)
+    let response=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apikey}`)
     let data=await response.json();
     setWeatherData(data);
 
