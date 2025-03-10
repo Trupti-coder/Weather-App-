@@ -48,6 +48,11 @@ function Weather(){
   };
 
   async function fetchWeatherData(lat,lon,unit){
+    const apiKey= 
+    setError(null);
+    const response=await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${apiKey}`)
+    const data=await response.json();
+    setWeatherData(data);
     
 
   }
