@@ -71,10 +71,6 @@ function Weather(){
   }
 
 
-
-
-    
-
     return(
         <>
         <div>
@@ -92,17 +88,17 @@ function Weather(){
             <button onClick={getUserLocation}>Get Weather by Location</button>
 
             {
-              weatherData && (
-                <div>
-                  <h3>{weatherData.name}</h3>
-                  <p>{Math.round(weatherData.main.temp)}°{unit === 'metric' ? 'C' : 'F'}</p>
-                  <p>
-                  {weatherIcons[weatherData.weather[0].description] || weatherData.weather[0].description}
-                  </p>
-                </div>
-                
-              )
-            }
+            weatherData && weatherData.main && (
+            <div>
+            <h3>{weatherData.name}</h3>
+            <p>{Math.round(weatherData.main.temp)}°{unit === 'metric' ? 'C' : 'F'}</p>
+           <p>
+           {weatherIcons[weatherData.weather[0].description] || weatherData.weather[0].description}
+          </p>
+          </div>
+  )
+}
+
         </div>
         </>
     );
