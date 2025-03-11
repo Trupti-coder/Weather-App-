@@ -65,6 +65,7 @@ function Weather() {
     }
 
     return (
+      
         <div className={styles.container}>
             <div className={styles.inputGroup}>
                 <input
@@ -96,6 +97,7 @@ function Weather() {
                 </div>
             )}
         </div>
+      
     );
 }
 
