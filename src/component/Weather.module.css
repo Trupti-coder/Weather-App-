@@ -38,3 +38,16 @@ button {
 button:hover {
     background-color: #4f46e5;
 }
+
+.weatherInfo {
+    text-align: center;
+    background-color: #eef2ff;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.weatherInfo h3 {
+    color: #4f46e5;
+    margin-bottom: 0.5rem;
+}
