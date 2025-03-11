@@ -22,13 +22,25 @@ function Weather(){
   };
 
 
-   async function fetchWeatherDataByCity(city,unit){
+  async function fetchWeatherDataByCity(city, unit) {
     const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
-    let response=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`)
-    let data=await response.json();
-    setWeatherData(data);
-
+    try {
+      let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`);
+      let data = await response.json();
+  
+      if (response.ok) {
+        setWeatherData(data);
+      } else {
+        setError(data.message || 'Error fetching weather data');
+        setWeatherData(null);
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      setError('Failed to fetch weather data.');
+      setWeatherData(null);
+    }
   }
+  
 
   useEffect(()=>{
     fetchWeatherDataByCity(city,unit);
