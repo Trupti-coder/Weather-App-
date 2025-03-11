@@ -23,7 +23,8 @@ function Weather(){
 
 
    async function fetchWeatherDataByCity(city,unit){
-    let response=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apikey}`)
+    const apiKey=d347edc9e69ce0d1a5fc4ff5f78413db;
+    let response=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`)
     let data=await response.json();
     setWeatherData(data);
 
@@ -48,7 +49,7 @@ function Weather(){
   };
 
   async function fetchWeatherData(lat,lon,unit){
-    const apiKey= 
+    const apiKey= d347edc9e69ce0d1a5fc4ff5f78413db;
     setError(null);
     const response=await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${apiKey}`)
     const data=await response.json();
