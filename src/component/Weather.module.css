@@ -51,3 +51,8 @@ button:hover {
     color: #4f46e5;
     margin-bottom: 0.5rem;
 }
+
+.weatherInfo p {
+    margin: 0.2rem 0;
+    font-weight: 500;
+}
