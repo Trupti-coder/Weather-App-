@@ -27,3 +27,14 @@
     border-radius: 8px;
     width: 100%;
 }
+
+button {
+    background-color: #6366f1;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #4f46e5;
+}
