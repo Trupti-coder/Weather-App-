@@ -6,8 +6,7 @@ function Weather() {
     const [city, setCity] = useState('Pune');
     const [unit, setUnit] = useState('metric');
     const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(false);
-
+    
 
     const weatherIcons = {
         "clear sky": "🌞",
@@ -24,9 +23,9 @@ function Weather() {
     async function fetchWeatherDataByCity(city, unit) {
         const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
         try {
-            setLoading(true);
             let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`);
             let data = await response.json();
+
             if (response.ok) {
                 setWeatherData(data);
             } else {
@@ -37,13 +36,8 @@ function Weather() {
             console.error('Error fetching data:', error);
             setError('Failed to fetch weather data.');
             setWeatherData(null);
-        } finally {
-            setLoading(false);
         }
     }
-    
-
-   
 
     useEffect(() => {
         fetchWeatherDataByCity(city, unit);
